@@ -16,4 +16,9 @@ module.exports = withAntdLess({
   webpack(config) {
     return config;
   },
+  images: {
+    domains: ['picsum.photos'],
+  },
+  reactStrictMode: true,
+  swcMinify: true,
 });
