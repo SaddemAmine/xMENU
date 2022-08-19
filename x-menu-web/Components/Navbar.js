@@ -2,9 +2,13 @@ import { Menu, Affix } from 'antd'
 import { Link } from 'next/link'
 
 export default function Navbar(){
+    const style = {
+        justifyContent: 'center'
+    }
+
     return (
         <Affix>
-            <Menu mode="horizontal">
+            <Menu mode="horizontal" style={style}>
                 <Menu.Item key="one">
                     Navigation One
                 </Menu.Item>

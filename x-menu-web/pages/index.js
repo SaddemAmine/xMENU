@@ -5,10 +5,27 @@ import Navbar from '../Components/Navbar'
 import Image from 'next/image'
 
 import { Row, Col, Button, Typography } from 'antd'
+import { FacebookOutlined } from '@ant-design/icons';
 
 const Title = Typography.Title
 
 export default function Home() {
+  const titleStyle = {
+    fontSize: '8em',
+    color: '#519872',
+    margin: 0,
+    marginBottom: 0,
+    lineHeight: 'normal'
+  }
+
+  const subtitleStyle = {
+    fontSize: '4em',
+  }
+
+  const secondaryColor = {
+    color: '#3B5249'
+  }
+
   return (
     <div>
       <Head>
@@ -19,64 +36,68 @@ export default function Home() {
 
       <main>
         <Slide banner>
-          <Title level={4} style={{}}>Browsing Restaurants ?</Title>
-          <Title level={1} style={{margin: 0}}>xMENU</Title>
-          <Title level={4} style={{width: '45%'}}>
+          <Title level={4} style={secondaryColor}>Browsing Restaurants ?</Title>
+          <Title level={1} style={titleStyle}>xMENU</Title>
+          <Title level={4} style={{...secondaryColor, width: '45%'}}>
             xMENU is a web application that allows you to create and manage your own menu. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia dolor fuga fugiat temporibus, quae quisquam inventore vero quos laudantium molestiae eaque corporis, assumenda vel cumque sit ducimus consectetur quod doloremque.
           </Title>
         </Slide>
 
         <Navbar />
 
-        <Slide>
+        <Slide padded center background={'#A4B494'}>
           <Row>
             <Col span={10}>
-              <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nobis dolor in atque vero quia tenetur?</h2>
-              <h2>Lorem ipsum dolor sit.</h2>
-              <h2>Lorem ipsum dolor sit.</h2>
-              <h2>Lorem ipsum dolor sit.</h2>
+              <Title level={2} style={subtitleStyle}>Easily find what you're looking for</Title>
+              <Title level={4} style={{marginLeft: '2rem'}}>Lorem ipsum dolor sit.</Title>
+              <Title level={4} style={{marginLeft: '2rem', marginTop: 0}}>Lorem ipsum dolor sit.</Title>
+              <Title level={4} style={{marginLeft: '2rem', marginTop: 0}}>Lorem ipsum dolor sit.</Title>
             </Col>
             <Col span={10} offset={4}>
-              <Image src="https://picsum.photos/600/300" alt="side 1" width={600} height={300} />
+              <Image src="/chef.png" alt="Chef" width={400} height={319} />
             </Col>
           </Row>
         </Slide>
         
-        <Slide>
+        <Slide padded center>
           <Row>
             <Col span={10}>
-              <Image src="https://picsum.photos/600/300" alt="side 2" width={600} height={300} />
+              <Image src="/noodles.png" alt="Noodles" width={400} height={319} />
             </Col>
             <Col span={10} offset={4}>
-              <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nobis dolor in atque vero quia tenetur?</h2>
-              <h2>Lorem ipsum dolor sit.</h2>
-              <h2>Lorem ipsum dolor sit.</h2>
-              <h2>Lorem ipsum dolor sit.</h2>
+              <Title level={2} style={subtitleStyle}>Easily find what you're looking for</Title>
+              <Title level={4} style={{marginLeft: '2rem'}}>Lorem ipsum dolor sit.</Title>
+              <Title level={4} style={{marginLeft: '2rem', marginTop: 0}}>Lorem ipsum dolor sit.</Title>
+              <Title level={4} style={{marginLeft: '2rem', marginTop: 0}}>Lorem ipsum dolor sit.</Title>
             </Col>
           </Row>
         </Slide>
 
-        <Row>
-          <Col span={4} offset={1}>
-            <h3>Benefits of xMENU</h3>
-          </Col>
-          <Col span={4} offset={2}>
-            <h3>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</h3>
-          </Col>
-          <Col span={4} offset={2}>
-            <h3>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</h3>
-          </Col>
-          <Col span={4} offset={2}>
-            <h3>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</h3>
+        <Row style={{backgroundColor: '#f0f2f5'}}>
+          <Col span={12} style={{backgroundColor: '#A4B494', borderRadius: '15px'}}>
+            <Row>
+              <Col span={4} offset={1}>
+                <h3>Benefits of xMENU</h3>
+              </Col>
+              <Col span={4} offset={2}>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+              </Col>
+              <Col span={4} offset={2}>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+              </Col>
+              <Col span={4} offset={2}>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+              </Col>
+            </Row>
           </Col>
         </Row>
 
         <Slide center>
-          <h2>Browsing Restaurants ?</h2>
-          <h1 style={{margin: 0}}>xMENU</h1>
-          <h2 style={{width: '45%'}} align="center">
+          <Title level={2}>Browsing Restaurants ?</Title>
+          <Title level={1} style={titleStyle}>xMENU</Title>
+          <Title level={2} style={{width: '45%'}} align="center">
             xMENU is a web application that allows you to create and manage your own menu. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          </h2>
+          </Title>
           <Row>
             <Col>
               <Button type="primary" shape="round" size="large">
@@ -94,10 +115,10 @@ export default function Home() {
         <Slide isFooter>
           <Row>
             <Col span={2}>
-              <Image src="https://picsum.photos/50/50" alt="logo" width={50} height={50} />
+              <Title level={5} style={{color: '#A4B494'}}>xMENU</Title>
             </Col>
             <Col span={2} offset={20}>
-              <Image src="https://picsum.photos/50/50" alt="logo" width={50} height={50} />
+              <FacebookOutlined />
             </Col>
           </Row>
         </Slide>

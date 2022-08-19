@@ -1,9 +1,12 @@
 import { Layout } from "antd"
 
-export default function Slide({children, isFooter, style, center, banner}) {
+export default function Slide({children, isFooter, style, center, banner, padded, background}) {
 
     const styleObject = {
-        ...(center && { display: 'grid', placeItems: 'center' }),
+        height: '94vh',
+        padding: padded ? '12em 12em 0em 12em' : '12em 6em 0em 6em',
+        
+        ...(center && { display: 'grid', placeItems: 'center', paddingTop: 0}),
         ...(banner && { 
                 backgroundImage: `
                     linear-gradient(90deg, rgba(243,230,239,1) 50%, rgba(59,82,73,0) 100%), 
@@ -11,7 +14,13 @@ export default function Slide({children, isFooter, style, center, banner}) {
                 `,
                 backgroundSize: 'cover', backgroundPosition: 'top', 
             }),
-        ...style,
+        ...(background && {backgroundColor: background}),
+        ...style
+    }
+
+    const footerStyle = {
+        backgroundColor: '#382933',
+        color: '#A4B494'
     }
 
     return (
@@ -21,7 +30,7 @@ export default function Slide({children, isFooter, style, center, banner}) {
                     {children}
                 </Layout.Content>
             ) : (
-                <Layout.Footer style={styleObject}>
+                <Layout.Footer style={footerStyle}>
                     {children}
                 </Layout.Footer>
             )}
