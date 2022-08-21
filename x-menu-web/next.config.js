@@ -17,7 +17,7 @@ module.exports = withAntdLess({
     return config;
   },
   images: {
-    domains: ['picsum.photos'],
+    domains: ['picsum.photos', 'images.ctfassets.net'],
   },
   reactStrictMode: true,
   swcMinify: true,
